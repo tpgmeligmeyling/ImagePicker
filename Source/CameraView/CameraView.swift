@@ -101,11 +101,13 @@ class CameraView: UIViewController, CLLocationManagerDelegate, CameraManDelegate
 
   private var currentZoomFactor: CGFloat = 1.0
   private var previousZoomFactor: CGFloat = 1.0
+  private var onImage: ((UIImage) -> ())?
 
-  public init(configuration: ImagePickerConfiguration? = nil) {
+  public init(configuration: ImagePickerConfiguration? = nil, onImage: ((UIImage) -> ())?) {
     if let configuration = configuration {
       self.configuration = configuration
     }
+    self.onImage = onImage
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -227,7 +229,7 @@ class CameraView: UIViewController, CLLocationManagerDelegate, CameraManDelegate
         })
     })
 
-    cameraMan.takePhoto(previewLayer, location: locationManager?.latestLocation) {
+    cameraMan.takePhoto(previewLayer, onImage: onImage, location: locationManager?.latestLocation) {
       completion()
       self.delegate?.imageToLibrary()
     }

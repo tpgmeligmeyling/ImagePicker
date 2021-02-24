@@ -236,7 +236,7 @@
 				TargetAttributes = {
 					D5DC598A1C201BE1003BD79B = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = ADTR2923N7;
+						DevelopmentTeam = 46GZX9FQK9;
 						LastSwiftMigration = 1020;
 					};
 				};
@@ -439,8 +439,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ADTR2923N7;
+				DEVELOPMENT_TEAM = 46GZX9FQK9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -448,7 +449,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.ImagePicker;
+				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.ImagePickerttt;
 				PRODUCT_NAME = ImagePicker;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -459,8 +460,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = ADTR2923N7;
+				DEVELOPMENT_TEAM = 46GZX9FQK9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -468,7 +470,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.ImagePicker;
+				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.ImagePickerttt;
 				PRODUCT_NAME = ImagePicker;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

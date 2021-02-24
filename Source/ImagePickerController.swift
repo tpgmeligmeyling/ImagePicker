@@ -46,7 +46,11 @@ open class ImagePickerController: UIViewController {
     }()
 
   lazy var cameraController: CameraView = { [unowned self] in
-    let controller = CameraView(configuration: self.configuration)
+    let controller = CameraView(configuration: self.configuration) {
+        [weak self] image in
+        guard let `self` = self else { return }
+        self.delegate?.doneButtonDidPress(self, images: [image])
+    }
     controller.delegate = self
     controller.startOnFrontCamera = self.startOnFrontCamera
 
@@ -416,14 +420,15 @@ extension ImagePickerController: CameraViewDelegate {
 
   func imageToLibrary() {
     guard let collectionSize = galleryView.collectionSize else { return }
+//
+//    galleryView.fetchPhotos {
+//      guard let asset = self.galleryView.assets.first else { return }
+//      if self.configuration.allowMultiplePhotoSelection == false {
+//        self.stack.assets.removeAll()
+//      }
+//      self.stack.pushAsset(asset)
+//    }
 
-    galleryView.fetchPhotos {
-      guard let asset = self.galleryView.assets.first else { return }
-      if self.configuration.allowMultiplePhotoSelection == false {
-        self.stack.assets.removeAll()
-      }
-      self.stack.pushAsset(asset)
-    }
 
     galleryView.shouldTransform = true
     bottomContainer.pickerButton.isEnabled = true

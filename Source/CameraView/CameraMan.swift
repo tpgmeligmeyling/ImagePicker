@@ -149,7 +149,7 @@ class CameraMan {
     }
   }
 
-  func takePhoto(_ previewLayer: AVCaptureVideoPreviewLayer, location: CLLocation?, completion: (() -> Void)? = nil) {
+    func takePhoto(_ previewLayer: AVCaptureVideoPreviewLayer, onImage: ((UIImage) -> ())?, location: CLLocation?, completion: (() -> Void)? = nil) {
     guard let connection = stillImageOutput?.connection(with: AVMediaType.video) else { return }
 
     connection.videoOrientation = Helper.videoOrientation()
@@ -165,8 +165,8 @@ class CameraMan {
             }
             return
         }
-
-        self.savePhoto(image, location: location, completion: completion)
+        onImage?(image)
+//        self.savePhoto(image, location: location, completion: completion)
       }
     }
   }

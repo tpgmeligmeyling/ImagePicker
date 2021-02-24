@@ -67,6 +67,7 @@ class ViewController: UIViewController, ImagePickerDelegate {
   }
 
   func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+    print(images)
     imagePicker.dismiss(animated: true, completion: nil)
   }
 }
